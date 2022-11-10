@@ -16,6 +16,10 @@ jobs:
 
       - name: 'login to docker'
         run: docker login --username ${{secrets.DOCKER_USRNM}} --password ${{secrets.TOKEN}}
+      - name: 'build img'
+        run: docker build -t ${{secrets.DOCKER_USRNM}}/task2
+      - name: 'push img'
+        run: docker push ${{secrets.DOCKER_USRNM}}/task2
 
         
       
